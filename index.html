@@ -25,7 +25,7 @@
            const barWidth=width/data.length;
 
            const xScale = d3.scaleTime()
-                            .domain([d3.min(data.map(d=>new Date(d[0].split("-")[0]))), d3.max(data.map(d=>new Date(d[0].split("-")[0])))])
+                            .domain([d3.min(data.map(d=>new Date(d[0]))), d3.max(data.map(d=>new Date(d[0])))])
                             .range([0, width]);
            g.append("g").attr("id","x-axis").attr("transform","translate(0, "+ height +")").call(d3.axisBottom(xScale).ticks(10));
            const yScale=d3.scaleLinear()
